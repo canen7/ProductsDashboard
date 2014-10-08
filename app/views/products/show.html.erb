@@ -1,0 +1,7 @@
+<p>Name: <%= @product.name %></p>
+<p>Description: <%= @product.description %></p>
+<p>Price: <%= @product.pricing %></p>
+<br>
+<%= @product.id %>
+<p><%= link_to 'Edit', edit_product_path(@product)  %> | <%= link_to 'Back', products_path  %></p>
+<p><%= link_to 'Destroy Product', product_path(@product), method: :delete, data: {confirm:"This data will be lost. Are you sure?"}  %></p>

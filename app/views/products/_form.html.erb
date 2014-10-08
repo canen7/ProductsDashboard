@@ -1,0 +1,20 @@
+<% if @product.errors%>
+	<% @product.errors.full_messages.each do |err| %>
+		<p class='errors'><%= err %></p>
+	<%end%>
+<%end%>
+
+<%=form_for(@product) do |f| %>
+	<%= f.label :name, "Name" %>	
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :description,"Description" %>
+	<%= f.text_field :description %>
+	<br>
+	<%= f.label :pricing,"Price" %>
+	<%= f.text_field :pricing%>
+	<br>
+	<%= f.label :category_id,"Category" %>
+	<%= f.select :category_id, options_from_collection_for_select(@categories,'id','name'), prompt: true %>
+	<%= f.submit %>
+<% end %>

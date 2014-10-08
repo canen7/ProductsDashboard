@@ -1,0 +1,33 @@
+<h1>Listing products</h1>
+
+<p><%=link_to 'Create a new product', new_product_path %></p>
+
+<table>
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>Price</td>
+			<td>Category</td>
+			<td></td>
+			<td>Actions</td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |product| %>
+		<tr>
+			<td><%= product.name %></td>
+			<td><%= product.description %></td>
+			<td><%= product.pricing %></td>
+			<td><%= product.category.name %></td>
+			<td><%= link_to 'Show', product_path(product) %></td>
+			<td><%= link_to 'Edit', edit_product_path(product) %></td>
+			<td><p><%= link_to 'Delete', product_path(product), method: :delete, data: {confirm:"This data will be lost. Are you sure?"}  %></p></td>
+		</tr>
+		<%end%>
+	</tbody>
+</table>
+
+
+
