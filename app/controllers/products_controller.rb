@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
   def index
+    @categories = Category.all
     @products = Product.all
   end
 
   def show
     @product = Product.find(params[:id])
-
+    @comments = Comment.where(product_id = @product.id)
+    raise
   end
 
   def new

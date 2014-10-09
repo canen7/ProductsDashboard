@@ -8,3 +8,5 @@
 
 Category.delete_all
 Category.create([{name:'Gardening'},{name:'Electronics'},{name:'Housing'}])
+
+Comment
